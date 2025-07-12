@@ -1,0 +1,76 @@
+//default route
+
+###
+GET http://localhost:5000/
+
+//Users Route
+
+###
+GET http://localhost:5000/api/users
+Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiZGVuaXNAZXhhbXBsZS5jb20iLCJmdWxsTmFtZSI6IkRlbmlzIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc0ODQ0MDkwNCwiaWF0IjoxNzQ4NDM3MzA0fQ.46gRM9w65ZXyJ6T2rDrCJKfCmNuy0rMN3TmnBJUg2HI
+###
+GET http://localhost:5000/api/users/4
+
+###
+POST http://localhost:5000/api/auth/register
+content-type: application/json
+
+{
+  "fullName": "Denis",
+  "email": "wachira.denis@teach2give.com",
+  "password": "password3"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+content-type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password3" 
+}
+
+###
+PUT http://localhost:5000/api/users/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiZGVuaXNAZXhhbXBsZS5jb20iLCJmdWxsTmFtZSI6IkRlbmlzIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc0ODQ0MDkwNCwiaWF0IjoxNzQ4NDM3MzA0fQ.46gRM9w65ZXyJ6T2rDrCJKfCmNuy0rMN3TmnBJUg2HI
+content-type: application/json
+
+{
+"fullName": "John Updted",
+  "email": "john@example.com",
+  "password": "password3" 
+}
+
+
+###
+DELETE  http://localhost:5000/api/users/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiZGVuaXNAZXhhbXBsZS5jb20iLCJmdWxsTmFtZSI6IkRlbmlzIiwidXNlclR5cGUiOiJhZG1pbiIsImV4cCI6MTc0ODQ0MDkwNCwiaWF0IjoxNzQ4NDM3MzA0fQ.46gRM9w65ZXyJ6T2rDrCJKfCmNuy0rMN3TmnBJUg2HI
+
+//State route
+###
+GET http://localhost:5000/api/states
+
+###
+GET http://localhost:5000/api/states/3
+
+
+###
+POST http://localhost:5000/api/states
+content-type: application/json
+
+{
+  "stateName": "New State",
+  "stateCode": "NS" 
+}
+
+###
+PUT http://localhost:5000/api/states/3
+content-type: application/json
+
+{
+  "stateName": "New State Updated",
+  "stateCode": "NS" 
+}
+
+###
+DELETE  http://localhost:5000/api/states/3
