@@ -57,14 +57,16 @@ export const createUser = async (req: Request, res: Response) => {
 export const updateUser = async (req: Request, res: Response) => {
   const userId = parseInt(req.params.id);
   if (isNaN(userId)) {
-    return res.status(400).json({ error: "Invalid user ID" });
+     res.status(400).json({ error: "Invalid user ID" });
+     return
   }
 
   const { firstName, lastName, email, password, userType, status } = req.body;
 
   // Check if at least one field is provided
   if (!firstName && !lastName && !email && !password && !userType && !status) {
-    return res.status(400).json({ error: "At least one field must be provided to update" });
+    res.status(400).json({ error: "At least one field must be provided to update" });
+    return 
   }
 
   try {
